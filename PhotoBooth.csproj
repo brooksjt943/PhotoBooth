@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Encoder, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +47,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CameraWrapper.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Emailer.cs" />
+    <Compile Include="FormSelectorController.cs" />
+    <Compile Include="Frame.cs" />
+    <Compile Include="PhotoBoothConfirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhotoBoothConfirmation.Designer.cs">
+      <DependentUpon>PhotoBoothConfirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoBoothEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhotoBoothEdit.Designer.cs">
+      <DependentUpon>PhotoBoothEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="PhotoBoothMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,7 +71,14 @@
       <DependentUpon>PhotoBoothMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Prompt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PhotoBoothConfirmation.resx">
+      <DependentUpon>PhotoBoothConfirmation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhotoBoothEdit.resx">
+      <DependentUpon>PhotoBoothEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PhotoBoothMainForm.resx">
       <DependentUpon>PhotoBoothMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -78,6 +103,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
